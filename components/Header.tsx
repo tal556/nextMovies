@@ -3,9 +3,11 @@ import Image from "next/image";
 import { BellIcon, SearchIcon } from "@heroicons/react/solid";
 import { MdOutlineSwitchAccount } from "react-icons/md";
 import Link from "next/link";
+import useAuth from "../hooks/useAuth";
 
 function Header() {
   const [isScrolled, setisScrolled] = useState(false);
+  const { logout } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,9 +29,9 @@ function Header() {
       <div className="flex items-center space-x-4 text-sm font-light">
         <SearchIcon className="sm hidden sm:inline h-6 w-6 cursor-pointer" />
         <BellIcon className="h-6 w-6 cursor-pointer" />
-        <Link href="/account">
-          <MdOutlineSwitchAccount className="cursor-pointer rounded h-6 w-6" />
-        </Link>
+        {/* <Link href="/account"> */}
+          <MdOutlineSwitchAccount onClick={logout} className="cursor-pointer rounded h-6 w-6" />
+        {/* </Link> */}
       </div>
 
       <div className="flex items-center space-x-2 md:space-x-10">
@@ -41,15 +43,14 @@ function Header() {
           <li className="headerLink">הרשימה שלי</li>
         </ul>
         <div>
-            <Image
-          width={45}
-          height={45}
-          src="/logo2.png"
-          alt="טל לוגו"
-          className="cursor-pointer object-contain"
-        />
+          <Image
+            width={45}
+            height={45}
+            src="/logo2.png"
+            alt="טל לוגו"
+            className="cursor-pointer object-contain"
+          />
         </div>
-      
       </div>
     </header>
   );
