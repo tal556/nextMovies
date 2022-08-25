@@ -38,7 +38,7 @@ function Login({}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Image
-        src="/img/bg.jpg"
+        src="https://firebasestorage.googleapis.com/v0/b/nextmovies-35708.appspot.com/o/bg.jpg?alt=media&token=875ca2de-b305-4074-b549-5c1a3e4b4be6"
         // src="https://rb.gy/p2hphi"
         layout="fill"
         className="-z-10 !hidden opacity-60 sm:!inline"
